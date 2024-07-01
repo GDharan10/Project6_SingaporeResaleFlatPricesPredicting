@@ -8,7 +8,7 @@ This project aims to predict resale prices of flats in Singapore using machine l
 - **SingaporeResaleFlatPricesPredicting.ipynb**: Jupyter Notebook containing the Python code for data preprocessing, model training, evaluation, and predictions.
 
 ## Requirements
-- Python 3.x
+- Python
 - Jupyter Notebook
 - Required Python packages: pandas, numpy, scikit-learn, lightgbm, xgboost, seaborn, matplotlib, etc. (Listed in requirements.txt if available)
 
