@@ -1,28 +1,52 @@
-# Singapore Resale Flat Prices Prediction Project
+# Predicting Singapore Resale Flat Prices
+
+This project focuses on predicting resale prices of flats in Singapore using machine learning models. The dataset used for this analysis can be found in `Data.zip`. The main notebook for the project is `SingaporeResaleFlatPricesPredicting.ipynb`.
 
 ## Overview
-This project aims to predict resale prices of flats in Singapore using machine learning models. The dataset used in this project includes various features such as flat type, location, floor area, and others.
 
-## Files Included
-- **Data.zip**: Contains the dataset used for training and testing the models.
-- **SingaporeResaleFlatPricesPredicting.ipynb**: Jupyter Notebook containing the Python code for data preprocessing, model training, evaluation, and predictions.
+In this project, we analyze and predict resale flat prices in Singapore based on various features. The dataset is preprocessed, analyzed, and different machine learning models are trained and evaluated to predict resale prices effectively.
 
-## Requirements
-- Python
-- Jupyter Notebook
-- Required Python packages: pandas, numpy, scikit-learn, lightgbm, xgboost, seaborn, matplotlib, etc. (Listed in requirements.txt if available)
+## Data
 
-## Instructions
-1. **Data Extraction**: Extract `Data.zip` to access the dataset files.
-2. **Environment Setup**: Install the required Python packages using `pip install -r requirements.txt` (if available).
-3. **Run the Notebook**: Open `SingaporeResaleFlatPricesPredicting.ipynb` in Jupyter Notebook and execute each cell sequentially.
+The dataset used for this project (`Data.zip`) contains information about resale flat prices and relevant features.
 
-## Project Structure
-- **Data**: Contains the dataset files (`data.csv`, `data_description.txt`, etc.).
-- **SingaporeResaleFlatPricesPredicting.ipynb**: Main notebook with detailed code and comments explaining each step.
-- **README.md**: This file, providing an overview of the project.
+## Methodology
 
-## Usage
-- The notebook guides through data exploration, preprocessing, model selection, training, evaluation, and prediction.
-- Adjust hyperparameters, try different models, or enhance feature engineering to improve predictions.
-- Analyze evaluation metrics such as R-squared, MSE, MAE to assess model performance.
+1. **Data Preprocessing**: Exploratory Data Analysis (EDA), feature engineering, and handling missing values.
+   
+2. **Modeling**: Training and evaluating different machine learning models for regression.
+   
+3. **Evaluation**: Assessing model performance using metrics such as R-squared, RMSE, and MAE.
+
+## Model Comparison and Selection
+
+### Model Performance Scores
+
+- **HistGradientBoostingRegressor**:
+  - Train Score: 0.9656
+  - Test Score: 0.9652
+
+- **LGBMRegressor**:
+  - Train Score: 0.9656
+  - Test Score: 0.9651
+
+- **XGBRegressor**:
+  - Train Score: 0.9792
+  - Test Score: 0.9785
+
+### Reasons for Choosing XGBRegressor
+
+1. **Higher Test Score**: The XGBRegressor exhibits the highest test score (0.9785), indicating slightly better performance on unseen data compared to HistGradientBoostingRegressor and LGBMRegressor.
+
+2. **Lower Risk of Overfitting**: Despite having a higher train score (0.9792), the XGBRegressor shows a relatively small train-test gap (0.0007), suggesting potential robustness and lower risk of overfitting compared to HistGradientBoostingRegressor (train-test gap of 0.0004) and LGBMRegressor (train-test gap of 0.0005).
+
+3. **Consistent Performance**: XGBRegressor demonstrates consistent and robust predictive capabilities with competitive scores on both train and test datasets.
+
+4. **Tuning Flexibility**: XGBoost (XGBRegressor) offers extensive hyperparameter tuning options, providing opportunities for further performance enhancement through careful parameter optimization.
+
+5. **Community Support and Adoption**: XGBoost is widely adopted in academia and industry, supported by a large community and extensive resources for ongoing development and support.
+
+### Conclusion
+
+The XGBRegressor is selected as the preferred model for predicting Singapore resale flat prices due to its superior test performance, manageable train-test gap indicating potential robustness, tuning flexibility, and strong community support. These factors collectively make it well-suited for achieving accurate predictions in your modeling task.
+
